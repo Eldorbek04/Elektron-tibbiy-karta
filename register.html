@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tizimga kirish</title>
+    <link rel="stylesheet" href="./css/register.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">Tizimga yo'naltirish</h2>
+        <div class="login-card">
+            <div class="tabs-container">
+                <button class="tab-button active" data-tab="login">Login</button>
+                <button class="tab-button" data-tab="mobile-id">Mobile-ID</button>
+                <button class="tab-button" data-tab="eri">ERI</button>
+                <button class="tab-button" data-tab="qr-kod">QR-kod</button>
+            </div>
+
+            <form id="login-form" class="tab-content active" data-content="login">
+                <div class="input-group">
+                    <label for="username">Login</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Parol</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" required>
+                        <span class="password-toggle" onclick="togglePasswordVisibility()">
+                            &#128065; </span>
+                    </div>
+                </div>
+
+                <div class="forgot-password">
+                    <a href="#">Login yoki parol yodingizdan chiqdimi?</a>
+                </div>
+
+                <button type="submit" class="submit-button">Kirish</button>
+            </form>
+
+            <div class="tab-content" data-content="mobile-id">... Mobile-ID kontenti ...</div>
+            <div class="tab-content" data-content="eri">... ERI kontenti ...</div>
+            <div class="tab-content" data-content="qr-kod">... QR-kod kontenti ...</div>
+
+            <p class="registration-prompt">
+                Tizimda akkauntingiz yo'qmi? <a href="#"> Ro'yxatdan o'ting </a>
+            </p>
+
+            <p class="disclaimer">
+                * Tizimga kirish orqali siz shaxsiy ma'lumotlaringizni ushbu tizimga uzatishga rozilik bildirasiz.
+            </p>
+        </div>
+    </div>
+    <script src="./js/register.js"></script>
+</body>
+</html>

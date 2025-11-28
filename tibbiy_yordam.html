@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tez Tibbiy Yordam Boshqaruvi</title>
+    <link rel="stylesheet" href="./css/tibbiy_yordam.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Tez Tibbiy Yordam chaqirish</h1>
+    </div>
+
+    <div class="main-layout">
+
+        <div class="call-map-section panel">
+            
+            <div class="call-panel">
+                <h3>🆘 Tez Yordamni Chaqirish</h3>
+                <label for="location-input">Joylashuv manzili / Lokatsiya</label>
+                <input type="text" id="location-input" placeholder="Aniq manzilni kiriting...">
+                <button id="call-button" onclick="callAmbulance()">
+                    <i class="fa-solid fa-phone"></i> Yordam Chaqirish
+                </button>
+            </div>
+
+            <div class="map-panel">
+                <h3>🗺️ Lokatsiya Kuzatuvi</h3>
+                <div id="mock-map">
+                    <p>🌐 Xarita joylashuvi (Mockup)</p>
+                    <p id="ambulance-status">Tez yordam chaqirilmagan.</p>
+                </div>
+                
+                <div class="arrival-info">
+                    <p>Kutilayotgan kelish vaqti:</p>
+                    <p id="arrival-time" class="time-display">--:--</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="patient-treatment-section panel">
+            <h3>👤 Bemor Ma'lumotlari va Muolaja</h3>
+            
+            <div class="patient-details">
+                <div class="info-group">
+                    <label>Bemor ismi:</label>
+                    <p id="patient-name">Mirsadikov Nodirjon</p>
+                </div>
+                <div class="info-group">
+                    <label>Qon guruhi:</label>
+                    <p id="blood-type" class="highlight">A Rh-</p>
+                </div>
+                <div class="info-group">
+                    <label>Allergiya (Qaysi doriga):</label>
+                    <p id="allergies" class="warning">Penitsillin, Aspirin</p>
+                </div>
+            </div>
+
+            <div class="treatment-log">
+                <h4>📝 Qilingan Muolaja Jurnali</h4>
+                <div id="treatment-history">
+                    <!-- <div class="treatment-entry">
+                        <span class="time-stamp">10:05</span> - Bemorning holati baholandi.
+                    </div> -->
+                </div>
+
+            </div>
+
+            <div class="ambulance-arrival-time">
+                <h4>🛬 Tez Yordamning Kelish Vaqti</h4>
+                <p id="actual-arrival-time">00:00:00</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./js/tibbiy_yordam.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teri Kasalliklarini Aniqlash</title>
+    <link rel="stylesheet" href="./css/terikasalliklari.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Teri Kasalliklarini Aniqlash Tizimi</h1>
+        <p>Tahlil qilish uchun yara yoki kasallangan joyning rasmini yuklang.</p>
+
+        <div class="upload-area">
+            <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+            <button id="uploadButton">Rasm yuklash</button>
+            <div id="imagePreview" class="image-preview">
+                <p>Yuklangan rasm shu yerda ko'rinadi.</p>
+            </div>
+        </div>
+
+        <button id="analyzeButton" disabled>Tahlil qilish</button>
+
+        <div id="results" class="results" style="display: none;">
+            <h2>Tahlil Natijasi</h2>
+            <h3 id="diagnosisName"></h3>
+            <p id="diagnosisDescription"></p>
+            
+            <h3>Davolash Usullari va Tavsiyalar</h3>
+            <ul id="treatmentMethods"></ul>
+
+            <h3>Tavsiya Etilgan Dorilar Ro'yxati</h3>
+            <ul id="medicineList"></ul>
+
+            <div class="warning">
+                ⚠️ **DIQQAT:** Bu faqat demo natijalar. Aniq tashxis va davolash uchun har doim shifokor (dermatolog)ga murojaat qiling!
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

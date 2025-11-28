@@ -1,0 +1,729 @@
+/* Asosiy Stil Sozlamalari (Oq va Ko'k) */
+:root {
+    --primary-color: #007bff; /* To'q ko'k */
+    --secondary-color: #f8f9fa; /* Ochiq kulrang/deyarli oq */
+    --text-dark: #343a40;
+    --text-light: #6c757d;
+    --alert-red: #dc3545;
+    --success-green: #28a745;
+    --info-blue: #17a2b8;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header stili */
+.header-bar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logout-btn {
+    background-color: var(--alert-red);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+/* Asosiy kontent o'rami */
+.content-wrapper-phr {
+    display: flex;
+    flex: 1;
+}
+
+/* Sidebar (Menyu) stili */
+.sidebar-phr {
+    width: 280px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Profil stili */
+.profile-summary {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-avatar-container {
+    width: 100px; 
+    height: 100px;
+    margin: 0 auto 15px; 
+    border-radius: 50%; 
+    overflow: hidden;
+    box-shadow: 0 0 0 4px var(--primary-color), 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-name {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin: 10px 0;
+    color: var(--text-dark);
+}
+
+.contact-info {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.contact-info p {
+    margin: 3px 0;
+    font-size: 0.9em;
+    color: var(--text-light);
+}
+
+.contact-info strong {
+    color: var(--text-dark);
+    font-weight: 600;
+    display: inline-block;
+    width: 120px; /* Kenglikni biroz oshirdim */
+}
+
+.info-block {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+}
+
+.info-block h4 {
+    margin: 0 0 5px 0;
+    font-size: 0.9em;
+    color: var(--text-light);
+}
+
+.info-block p {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.allergy-status {
+    color: var(--alert-red); 
+}
+
+/* Menyu stili (Chat ko'rinishi + Scroll) */
+.phr-menu {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    height: 400px; /* Balandlikni saqladim */
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    padding-right: 10px;
+}
+
+.phr-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.phr-menu::-webkit-scrollbar-thumb {
+    background-color: #ced4da;
+    border-radius: 10px;
+}
+
+.phr-menu::-webkit-scrollbar-thumb:hover {
+    background-color: #a8a8a8;
+}
+
+.menu-button {
+    text-decoration: none;
+    color: var(--text-dark);
+    padding: 10px 15px; 
+    margin-bottom: 8px; 
+    border-radius: 18px 18px 18px 3px; 
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    font-weight: 600;
+    border: none;
+    background-color: #e9ecef; 
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.menu-button:hover:not(.active) {
+    background-color: #dee2e6;
+}
+
+.menu-button.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+    border-radius: 18px 18px 3px 18px; 
+}
+
+/* Kontent maydoni */
+.details-content-phr {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.phr-tab-pane {
+    display: none;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.phr-tab-pane.active {
+    display: block;
+}
+
+.phr-tab-pane h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Chat Ko'rinishi (Ma'lumotlarni ko'rsatish stili) */
+.chat-area {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.chat-message {
+    padding: 15px;
+    border-radius: 15px;
+    max-width: 85%;
+    position: relative;
+    line-height: 1.5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.vrach-message {
+    background-color: #e9f5ff; 
+    align-self: flex-start;
+    border-bottom-left-radius: 3px;
+    border: 1px solid #c9e3ff;
+}
+
+.chat-sender {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.chat-time {
+    font-size: 0.75em;
+    color: var(--text-light);
+    display: block;
+    margin-top: 5px;
+    text-align: right;
+}
+
+.document-message {
+    background-color: #e0fff0; 
+    border: 1px solid #b6f1b6;
+}
+
+.download-link {
+    color: var(--success-green);
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+
+.view-details-btn {
+    background-color: var(--info-blue); 
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.view-details-btn:hover {
+    background-color: #138496;
+}
+
+/* Vrachga yozilish shakli stili */
+.appointment-form-container {
+    background-color: #e9f5ff; 
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border: 1px solid #c9e3ff;
+}
+
+.appointment-form-container h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    border-bottom: 1px dashed #c9e3ff;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.form-group select,
+.form-group input[type="date"] {
+    border: 1px solid #b8daff;
+    background-color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.doctor-info-box {
+    background-color: #d1ecf1;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--info-blue);
+}
+
+.submit-btn {
+    background-color: var(--success-green); 
+    color: white;
+    border: none;
+    padding: 50px;
+    border-radius: 5px;
+    font-weight: 700;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #1e7e34;
+}
+
+.current-status-box {
+    background-color: #d1ecf1;
+    color: var(--text-dark);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #bee5eb;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Asosiy konteynerni sozlash - aylantirishni unga berish */
+.details-content-phr {
+    flex-grow: 1; /* Qolgan joyni egallaydi */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    
+    /* SCROLL XUSUSIYATINI QO'SHISH */
+    overflow-y: auto; 
+    height: calc(100vh - 100px); /* Boshqa elementlarni hisobga olgan holda maksimal balandlik */
+}
+
+/* Chat/Tarix konteynerlari uchun stil */
+.chat-container {
+    display: flex; /* Elementlarni ustma-ust qo'yish uchun */
+    flex-direction: column-reverse; /* Eng yangi (oxirgi) elementni pastdan (yoki konteyner ichidagi eng oxirgi pozitsiyadan) boshlash uchun */
+    gap: 15px;
+    padding: 10px 0;
+}
+
+/* Tab sahifalari uchun umumiy stil */
+.phr-tab-pane {
+    padding: 10px 0;
+    /* Chat konteynerlarida teskari tartib ishlashi uchun, 
+       bu bo'limning o'zida ham tartibni tekshirish kerak */
+}
+
+/* Chat elementlari (masalan, ko'rik/retsept) */
+.chat-message {
+    padding: 15px;
+    background-color: #e9f5ff; /* Bemor xabari */
+    border-radius: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.vrach-message {
+    background-color: #f0f7f4; /* Vrach xabari */
+    border-left: 4px solid var(--primary-color, #28a745);
+}
+
+.chat-time {
+    display: block;
+    font-size: 0.8em;
+    color: #888;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+/* Agar sizda hr elementi bo'lsa, chat oqimiga moslash */
+#content-tashrif hr {
+    order: 0; /* Hr chizig'ini tepaga (pastga) olib chiqish */
+}
+
+    /* ================================================= */
+/* 1. ASOSIY TUGLAMALAR KONTEYNERI (YONMA-YON TARTIB) */
+/* ================================================= */
+
+/* Tugmalarni o'rab turuvchi guruh uchun alohida div yaratish tavsiya etiladi.
+   Agar HTMLni o'zgartira olmasangiz, shunday qilasiz: */
+#content-asosiy {
+    display: flex;
+    flex-direction: column; 
+}
+
+/* Tugmalarni bir qatorga joylash uchun flex konteyner */
+.button-group-container {
+    display: flex; 
+    gap: 15px; /* Tugmalar orasidagi masofa */
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Agar ekran kichrayib ketsa, pastga tushadi */
+}
+
+/* HTMLni yangilash:
+   Uchta a.submit-btn ni o'rab turuvchi yangi div qo'shing:
+   <div class="button-group-container">
+       <a id="online-consultation-link" ...>...</a>
+       <a id="skin-diagnosis-link" ...>...</a>
+       <a id="video-call-link" ...>...</a>
+   </div>
+*/
+
+
+/* ================================================= */
+/* 2. HAR BIR BLOKLI TUYMA STILI */
+/* ================================================= */
+
+/* submit-btn stilini ustiga yozamiz */
+#content-asosiy a.submit-btn {
+    flex-grow: 1; /* Tugmalar mavjud bo'shliqni teng bo'lishib oladi (tortburchakroq bo'lishi uchun) */
+    min-width: 150px; /* Minimal kenglik */
+    
+    padding: 15px 10px; /* Ichki bo'shliq */
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 8px; /* Tortburchak burchaklar */
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+#content-asosiy a.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ranglar o'zgarishsiz qoladi */
+#online-consultation-link {
+    background-color: var(--primary-color, #28a745); 
+    color: white;
+}
+#skin-diagnosis-link {
+    background-color: var(--info-color, #007bff); 
+    color: white;
+}
+#video-call-link {
+    background-color: var(--danger-color, #dc3545); 
+    color: white;
+}
+
+/* Tugmalardan keyingi <p> elementini to'g'irlash */
+#content-asosiy p {
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+/* Tugmalar uchun asosiy uslublar, agar ular submit-btn classida hali o'rnatilmagan bo'lsa */
+.submit-btn {
+    /* ... avvalgi submit-btn uslublari (rang, padding, border-radius) ... */
+    
+    /* Tugmalar yonma-yon turishi uchun */
+    display: block; 
+    
+    /* Yonma-yon joylashganda ularning orasidagi masofa */
+    margin: 5px; 
+    
+    /* Agar tugmalar blok element bo'lib qolsa, ular yonma-yon turmaydi.
+       Biz buni button-group-container orqali Flexbox bilan boshqaramiz. */
+}
+
+/* 💥 Tugmalarni yonma-yon joylashtirish uchun asosiy konteyner */
+.button-group-container {
+    display: flex; /* Flex konteynerga aylantirish */
+    flex-wrap: wrap; /* Agar ekran kichrayib ketsa, tugmalar keyingi qatorga o'tishi uchun */
+    justify-content: space-around; /* Tugmalarni bo'shliqlar bilan teng taqsimlash (yoki center) */
+    align-items: center; /* Vertikal joylashuvni markazga olish */
+    margin-bottom: 20px;
+}
+
+/* Tugmalarni kichik ekranlarda ham tartibli ushlab turish */
+@media (max-width: 768px) {
+    .button-group-container {
+        flex-direction: column; /* Mobil qurilmalarda tagma-tag joylashtirish */
+    }
+    .submit-btn {
+        width: 90%; /* Mobil rejimda tugmalarning kengligini oshirish */
+        margin: 5px 0;
+    }
+}
+
+
+/* PHR bo'limi ichidagi ma'lumot qutisi uchun ham Flexbox qo'shish (kerak bo'lsa) */
+.current-status-box {
+    display: flex;
+    justify-content: space-around; /* yoki space-between */
+    padding: 15px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+.current-status-box p {
+    margin: 0;
+    padding: 0 10px;
+    /* Agar ma'lumotlar yonma-yon turganingizda uzun bo'lib ketsa, shu yerda 
+       ularni qanday ko'rsatishni belgilashingiz mumkin. */
+}
+
+.container {
+    display: grid;
+    /* 3 ta bir xil kenglikdagi ustun yaratadi */
+    grid-template-columns: repeat(3, 1fr);
+    /* Tugmachalar orasidagi masofa */
+    gap: 20px; 
+    padding: 20px;
+}
+
+/* Har bir havola-tugma uchun uslub */
+.button-box {
+    /* Rasmdagi to'rtburchak shakli va rangi */
+    width: 250px; /* Kenglikni o'zgartirishingiz mumkin */
+    height: 100px; /* Balandlikni o'zgartirishingiz mumkin */
+    background-color: #e0e7ec; /* Tugma ichki foni (rasmdagi to'q rang) */
+    border: 3px solid none; /* Qizil ramka */
+    display: flex;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Havola ostidagi chiziqni olib tashlash */
+    color: black; /* Matn rangi */
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+/* Hover effekti (tugma ustiga borganda) */
+.button-box:hover {
+    background-color: #007bff;
+    transform: scale(1.02); /* Kichik animatsiya qo'shamiz */
+}
+
+/* Active effekti (tugma bosilganda) */
+.button-box:active {
+    transform: scale(0.98);
+}
+
+/* ================================================= */
+/* MEDIA QUERIES (Mobil, Planshet va Katta ekranlar) */
+/* ================================================= */
+
+
+/* --- 1. Mobil Qurilmalar (Maksimal kenglik 576px) --- */
+/* Bu uslublar faqat ekran kengligi 576px va undan kichik bo'lsa qo'llaniladi. */
+@media (max-width: 576px) {
+    
+    /* Asosiy konteynerlar va shrift o'lchamlari */
+    body {
+        font-size: 14px; /* Kichik shrift */
+    }
+
+    .header-bar {
+        padding: 10px 15px; /* Kichik ichki bo'shliq */
+    }
+
+    /* Asosiy kontent o'rami: Sidebar va kontent tagma-tag turadi */
+    .content-wrapper-phr {
+        flex-direction: column; /* Yonma-yon turishni bekor qilish */
+    }
+
+    /* Sidebar (Menyu) stili */
+    .sidebar-phr {
+        width: 100%; /* To'liq kenglik */
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        order: 1; /* Sidebar kontentdan keyin ko'rsatiladi */
+        height: auto;
+    }
+    
+    /* Profil ma'lumotlarini markazga olib, ixchamlashtirish */
+    .profile-summary {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .profile-avatar-container {
+        width: 80px; 
+        height: 80px;
+    }
+    
+    .contact-info strong {
+        width: 90px; /* Kichik ekranlar uchun matn kengligini kamaytirish */
+    }
+
+    /* Menyu stili */
+    .phr-menu {
+        flex-direction: row; /* Mobil menyu tugmalarini yonma-yon qilish (o'raladi) */
+        overflow-x: auto; /* Gorizontal scroll qo'shish */
+        overflow-y: hidden;
+        height: auto;
+        padding-bottom: 10px;
+    }
+    .phr-menu::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .menu-button {
+        flex-shrink: 0; /* Tugmalar kengligini saqlab qolish */
+        margin-right: 8px; /* Yonma-yon turganlar orasidagi masofa */
+        padding: 8px 12px;
+        font-size: 0.9em;
+        /* Mobil menyuni bir qatorga joylashtirish uchun */
+        white-space: nowrap; 
+    }
+    
+    /* Kontent maydoni */
+    .details-content-phr {
+        width: 100%;
+        padding: 15px;
+        order: 0; /* Kontentni birinchi o'ringa qo'yish */
+        min-height: calc(100vh - 120px); /* O'zgargan balandlik */
+        height: auto;
+        overflow-y: visible;
+    }
+    
+    .phr-tab-pane {
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    /* Chat Ko'rinishi */
+    .chat-message {
+        max-width: 95%; /* Mobil ekranlarda ko'proq joy egallaydi */
+        padding: 10px;
+        border-radius: 12px;
+    }
+    
+    /* Tugmalar guruhi */
+    .button-group-container {
+        flex-direction: column; /* Tugmalarni tagma-tag joylashtirish */
+    }
+    #content-asosiy a.submit-btn {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 12px 10px;
+        font-size: 16px;
+    }
+    
+    /* Grid tizimi (agar ishlatilsa) */
+    .container {
+        grid-template-columns: 1fr; /* Mobil uchun 1 ustun */
+    }
+    .button-box {
+        width: 100%;
+        height: 80px;
+    }
+}
+
+
+/* --- 2. Planshetlar (Minimal 577px va Maksimal 992px kenglik) --- */
+/* Bu uslublar 577px dan 992px gacha bo'lgan ekranlar uchun qo'llaniladi */
+@media (min-width: 577px) and (max-width: 992px) {
+    
+    /* Sidebar kengligini ixchamlashtirish */
+    .sidebar-phr {
+        width: 200px; 
+    }
+
+    /* Profil elementlarini biroz ixchamlashtirish */
+    .profile-avatar-container {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Kontent maydoni ichki bo'shlig'ini kamaytirish */
+    .details-content-phr {
+        padding: 20px;
+    }
+    
+    /* Tugmalar guruhi */
+    .button-group-container {
+        gap: 10px; /* Masofani kamaytirish */
+    }
+    #content-asosiy a.submit-btn {
+        padding: 15px 10px;
+    }
+
+    /* Grid tizimi (agar ishlatilsa) */
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* Planshetlar uchun 2 ustun */
+        gap: 15px;
+    }
+}
+
+
+/* --- 3. Katta Ekranlar (Minimal kenglik 1200px) --- */
+/* Bu uslublar 1200px va undan katta bo'lgan ekranlar uchun qo'llaniladi (ixtiyoriy) */
+@media (min-width: 1200px) {
+    .main-container {
+        max-width: 1400px;
+        margin: 0 auto; /* Markazga joylashtirish */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .sidebar-phr {
+        width: 300px; /* Kengaytirilgan sidebar */
+    }
+}

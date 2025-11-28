@@ -1,0 +1,232 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p.initial-message {
+    text-align: center;
+    color: #6c757d;
+    padding: 30px;
+}
+
+/* Qidiruv qismi */
+.search-box {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+#searchInput {
+    flex-grow: 1;
+    padding: 12px;
+    border: 2px solid #ced4da;
+    border-radius: 6px 0 0 6px;
+    font-size: 16px;
+}
+
+#searchButton {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#searchButton:hover {
+    background-color: #218838;
+}
+
+/* Natijalar konteyneri */
+.results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 300px dan kam bo'lmagan kenglikda yonma-yon joylashtirish */
+    gap: 20px;
+    padding-top: 10px;
+}
+
+/* Dorilar kartochkasi */
+.drug-card {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.drug-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.drug-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.drug-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 15px;
+    border-radius: 4px;
+    border: 1px solid #f0f0f0;
+}
+
+.drug-name {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #007bff;
+    margin: 0;
+}
+
+.drug-type {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.drug-details p {
+    margin: 5px 0;
+    font-size: 0.95em;
+}
+
+.drug-details strong {
+    color: #333;
+}
+
+/* ================================================= */
+/* MEDIA QUERIES (Mobil, Planshet va Katta ekranlar) */
+/* ================================================= */
+
+
+/* --- 1. Mobil Qurilmalar (Maksimal kenglik 576px) --- */
+/* Faqat ekran kengligi 576px va undan kichik bo'lsa qo'llaniladi. */
+@media (max-width: 576px) {
+    
+    /* Asosiy konteyner */
+    .container {
+        padding: 15px; /* Ichki bo'shliqni kamaytirish */
+        border-radius: 0; /* Bosh ekranlarda burchaklarni olib tashlash */
+        box-shadow: none; /* Soyalarni olib tashlash */
+    }
+
+    /* Sarlavha */
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    p.initial-message {
+        padding: 15px 0;
+        font-size: 0.9em;
+    }
+
+    /* Qidiruv qismi (Tagma-tag holat) */
+    .search-box {
+        flex-direction: column; /* Input va tugmani tagma-tag joylashtirish */
+        margin-bottom: 20px;
+    }
+
+    #searchInput {
+        border-radius: 6px 6px 0 0; /* Yuqori qismlarni yumaloq qilish */
+        margin-bottom: 10px; /* Input va tugma orasiga masofa qo'shish */
+    }
+
+    #searchButton {
+        border-radius: 0 0 6px 6px; /* Pastki qismlarni yumaloq qilish */
+        width: 100%; /* To'liq kenglik */
+        padding: 10px 20px;
+    }
+    
+    /* Natijalar konteyneri */
+    .results-container {
+        grid-template-columns: 1fr; /* Mobil uchun 1 ustun */
+        gap: 15px;
+    }
+
+    /* Dorilar kartochkasi */
+    .drug-card {
+        padding: 10px;
+    }
+    
+    .drug-header {
+        flex-direction: column; /* Rasm va Matnni tagma-tag qo'yish */
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .drug-image {
+        width: 60px;
+        height: 60px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .drug-name {
+        font-size: 1.1em;
+    }
+    
+    .drug-type {
+        font-size: 0.8em;
+    }
+}
+
+
+/* --- 2. Planshetlar (Minimal 577px va Maksimal 992px kenglik) --- */
+/* Bu uslublar 577px dan 992px gacha bo'lgan ekranlar uchun qo'llaniladi */
+@media (min-width: 577px) and (max-width: 992px) {
+    
+    /* Asosiy konteyner */
+    .container {
+        padding: 25px;
+    }
+    
+    /* Qidiruv qismi */
+    /* Planshetlarda qidiruv satri yonma-yon qoladi, lekin biroz ixchamroq ko'rinishi mumkin */
+    #searchInput, #searchButton {
+        padding: 10px;
+    }
+
+    /* Natijalar konteyneri */
+    .results-container {
+        /* Grid tizimi avtomatik 2 ta ustunni yaratishi kerak (minmax(280px, 1fr) tufayli),
+           lekin agar 2 ustunni aniq belgilashni istasangiz: */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+    }
+}
+
+
+/* --- 3. Katta Ekranlar (Minimal kenglik 993px) --- */
+/* Ushbu qism faqat aniq o'zgarishlar kerak bo'lsa qo'shiladi */
+@media (min-width: 993px) {
+    .container {
+        max-width: 1100px; /* Kattaroq ekranlarda ko'proq joy berish */
+    }
+    
+    .results-container {
+        /* 3 tadan ko'proq ustun bo'lishi mumkin */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}

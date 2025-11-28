@@ -1,0 +1,191 @@
+/* Asosiy va Umumiy uslublar */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9;
+    color: #007bff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff; /* Asosiy Moviy */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+}
+
+.panel {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    flex: 1; /* Ikkala panel ham teng joy egallaydi */
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+h2 i {
+    margin-right: 10px;
+    color: #3498db;
+}
+
+/* Kirish Formasi */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.save-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #2ecc71; /* Yashil tugma */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-btn:hover {
+    background-color: #27ae60;
+}
+
+/* Tahlil Natijasi */
+.analysis-result {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#bp-value {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#bp-status {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Holat Ranglari */
+.status-normal { background-color: #2ecc71; } /* Yashil */
+.status-elevated { background-color: #f39c12; } /* Sariq */
+.status-stage1 { background-color: #e67e22; } /* To'q sariq */
+.status-stage2 { background-color: #e74c3c; } /* Qizil */
+.status-crisis { background-color: #c0392b; } /* To'q qizil */
+.status-hypo { background-color: #3498db; } /* Ko'k (Past bosim) */
+
+/* Tarix Ro'yxati */
+.history-list {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-date {
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+.history-status-badge {
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    color: white;
+}
+
+/* Umumiy Xulosa */
+.summary-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.summary-box p {
+    margin: 0;
+    color: #555;
+}
+
+.summary-box strong {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Responsive dizayn */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    .panel {
+        width: 100%;
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tibbiy Sug'urta Portali</title>
+    <link rel="stylesheet" href="./css/sugirta.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Tibbiy Sug'urta Portali</h1>
+    </header>
+
+    <div class="container">
+        <section class="policy-card panel">
+            <h2>Mening Sug'urta Polisim</h2>
+            <div class="policy-info-grid">
+                <div>
+                    <i class="fas fa-id-card"></i>
+                    <p>Polis raqami:</p>
+                    <strong id="policy-number">UMS-987654321</strong>
+                </div>
+                <div>
+                    <i class="fas fa-user-circle"></i>
+                    <p>Egasi:</p>
+                    <strong id="policy-holder">Jasur Ismatov</strong>
+                </div>
+                <div>
+                    <i class="fas fa-calendar-alt"></i>
+                    <p>Amal qilish muddati:</p>
+                    <strong id="expiry-date">2025 yil 31 dekabr</strong>
+                </div>
+                <div>
+                    <i class="fas fa-check-circle"></i>
+                    <p>Holat:</p>
+                    <strong id="policy-status" class="status-active">Faol</strong>
+                </div>
+            </div>
+            <button class="view-details-btn" onclick="showDetails()">Tafsilotlarni ko'rish</button>
+        </section>
+
+        <main class="main-content">
+            
+            <section class="coverage-section panel">
+                <h2> Qoplama Turlari</h2>
+                <div class="tabs-container">
+                    <button class="tab-button active" data-tab="general">Umumiy</button>
+                    <button class="tab-button" data-tab="dental">Stomatologiya</button>
+                    <button class="tab-button" data-tab="eye">Ko'z</button>
+                </div>
+
+                <div class="tab-content active" data-content="general">
+                    <ul class="coverage-list">
+                        <li><i class="fas fa-hospital"></i> Shifoxonada davolanish: <span class="limit">$50,000 gacha</span></li>
+                        <li><i class="fas fa-user-md"></i> Shifokor qabuli: <span class="limit">Bepul (Cheklovsiz)</span></li>
+                        <li><i class="fas fa-pills"></i> Retsept bo'yicha dorilar: <span class="limit">$1,000 gacha</span></li>
+                    </ul>
+                </div>
+                <div class="tab-content" data-content="dental">
+                    <p> Stomatologiya: Yiliga 1 marta bepul ko'rik. Asosiy muolajalar 70% qoplanadi.</p>
+                </div>
+                <div class="tab-content" data-content="eye">
+                    <p> Ko'z: Har 2 yilda ko'zoynak yoki linzalarga $150 gacha subsidiya.</p>
+                </div>
+            </section>
+            
+            <section class="claim-section panel">
+                <h2> Da'vo (Claim) Arizasi Berish</h2>
+                <form id="claim-form">
+                    <div class="form-group">
+                        <label for="claim-type">Da'vo turi:</label>
+                        <select id="claim-type" required>
+                            <option value="">Tanlang...</option>
+                            <option value="doctor-visit">Shifokorga tashrif</option>
+                            <option value="medicine">Dorilar xarajati</option>
+                            <option value="hospitalization">Shifoxonada davolanish</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Summasi ($):</label>
+                        <input type="number" id="amount" placeholder="150.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="receipt">Chek nusxasi (PDF/JPEG):</label>
+                        <input type="file" id="receipt" accept=".pdf, .jpg, .jpeg" required>
+                    </div>
+                    
+                    <button type="submit" class="submit-claim-btn">
+                        <i class="fas fa-paper-plane"></i> Arizani yuborish
+                    </button>
+                </form>
+                <div id="claim-message" class="hidden"></div>
+            </section>
+            
+        </main>
+    </div>
+
+    <script src="./js/sugirta.js"></script>
+</body>
+</html>

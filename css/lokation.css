@@ -1,0 +1,204 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 50px 20px;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* Status xabari maydoni (rasmdagi oq quti) */
+.map-container {
+    height: 150px; 
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.loading-message {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Dorixonalar ro'yxati */
+.pharmacy-list {
+    text-align: left;
+}
+
+.pharmacy-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #e9ecef;
+    border-left: 5px solid #28a745; /* Yashil chiziq */
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    
+    /* Bosiladigan element uslubi */
+    cursor: pointer; 
+    transition: background-color 0.2s;
+}
+
+.pharmacy-item:hover {
+    background-color: #e2e6ea;
+}
+
+.pharmacy-info {
+    flex-grow: 1;
+}
+
+.pharmacy-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 5px 0;
+}
+
+.pharmacy-address {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.pharmacy-distance {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #007bff;
+    padding-left: 15px;
+    white-space: nowrap;
+}
+
+/* ================================================= */
+/* MEDIA QUERIES (Mobil, Planshet va Katta ekranlar) */
+/* ================================================= */
+
+
+/* --- 1. Kichik Mobil Qurilmalar (Maksimal kenglik 400px) --- */
+/* Faqat juda kichik ekranlar (ko'p telefonlar) uchun. */
+@media (max-width: 400px) {
+    
+    /* Asosiy fon va konteyner */
+    body {
+        padding: 20px 10px; /* Vertikal paddingni kamaytirish */
+    }
+
+    .container {
+        padding: 20px 15px; /* Kontent ichki bo'shlig'ini kamaytirish */
+        border-radius: 0; /* Ekran boshida to'liq kenglik uchun burchaklarni olib tashlash */
+        box-shadow: none;
+    }
+
+    h1 {
+        font-size: 1.3em;
+    }
+
+    /* Xarita / Status maydoni */
+    .map-container {
+        height: 120px; /* Balandlikni kamaytirish */
+    }
+
+    .loading-message {
+        font-size: 0.9em;
+    }
+
+    /* Dorixona elementlari */
+    .pharmacy-item {
+        padding: 10px;
+        flex-direction: column; /* Ma'lumot va Masofa tagma-tag turadi */
+        align-items: flex-start;
+        border-left-width: 3px; /* Yashil chiziqni kamaytirish */
+    }
+
+    .pharmacy-name {
+        font-size: 1.0em;
+        margin-bottom: 3px;
+    }
+
+    .pharmacy-address {
+        font-size: 0.8em;
+        margin-bottom: 5px;
+    }
+
+    .pharmacy-distance {
+        font-size: 1.0em;
+        padding-left: 0;
+        align-self: flex-end; /* Masofani o'ng tomonga siljitish */
+        color: #0056b3; /* Masofaga biroz boshqacha rang berish */
+    }
+}
+
+
+/* --- 2. Planshetlar va Katta Telefonlar (Minimal 401px va Maksimal 768px kenglik) --- */
+/* Bu uslublar 401px dan 768px gacha bo'lgan ekranlar uchun qo'llaniladi. */
+@media (min-width: 401px) and (max-width: 768px) {
+    
+    .container {
+        max-width: 650px; /* Konteynerni kengaytirish */
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    /* Xarita maydoni balandligini oshirish */
+    .map-container {
+        height: 180px;
+    }
+    
+    /* Dorixona elementlaridagi tartibni saqlab qolish (yonma-yon) */
+    .pharmacy-item {
+        padding: 18px;
+    }
+}
+
+
+/* --- 3. Katta Ekranlar (Minimal kenglik 769px) --- */
+/* Desktop monitorlari va kattaroq planshetlar uchun. */
+@media (min-width: 769px) {
+    
+    body {
+        /* Vertikal markazlashni saqlab qolish, lekin paddingni yaxshilash */
+        padding: 80px 40px; 
+    }
+    
+    .container {
+        max-width: 700px; /* Katta ekranlarda ham fokusni saqlash */
+        padding: 40px;
+    }
+    
+    /* Xarita maydoni balandligini oshirish */
+    .map-container {
+        height: 250px; 
+        margin-bottom: 30px;
+    }
+
+    .pharmacy-item {
+        /* Kattaroq padding berish */
+        padding: 20px; 
+    }
+}

@@ -1,0 +1,198 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #007bff; /* Qizil rang (Tez yordam) */
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-layout {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.panel {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.call-map-section {
+    flex: 2; /* Chap bo'lim kattaroq */
+}
+
+.patient-treatment-section {
+    flex: 1; /* O'ng bo'lim kichikroq */
+}
+
+h3 {
+    color: #007bff;
+    margin-top: 0;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Chaqirish Paneli */
+.call-panel {
+    margin-bottom: 25px;
+}
+
+#location-input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#call-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#call-button:hover {
+    background-color: #007bff;
+}
+
+/* Xarita Paneli */
+#mock-map {
+    height: 300px;
+    background-color: #e9ecef; /* Xarita maydoni uchun och fon */
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #6c757d;
+}
+
+#ambulance-status {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #007bff;
+}
+
+.arrival-info {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.time-display {
+    font-size: 2.5em;
+    color: #28a745; /* Yashil rang */
+    font-weight: bold;
+}
+
+/* Bemor Ma'lumotlari */
+.info-group {
+    margin-bottom: 15px;
+}
+
+.info-group label {
+    font-weight: bold;
+    display: block;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.patient-details p {
+    margin: 5px 0 0 0;
+    padding: 5px;
+    background-color: #f8f9fa;
+    border-radius: 3px;
+}
+
+.highlight {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.warning {
+    color: #dc3545;
+    font-weight: bold;
+    background-color: #f8d7da; /* Yengil qizil fon */
+    padding: 5px;
+    border-radius: 3px;
+}
+
+/* Muolaja Jurnali */
+.treatment-log {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+#treatment-history {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #f8f9fa;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.treatment-entry {
+    margin-bottom: 8px;
+    line-height: 1.4;
+    font-size: 0.95em;
+}
+
+.time-stamp {
+    font-weight: bold;
+    color: #6c757d;
+    margin-right: 5px;
+}
+
+.new-treatment input {
+    width: calc(100% - 75px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    box-sizing: border-box;
+}
+
+.new-treatment button {
+    width: 70px;
+    padding: 8px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+/* Kelish vaqti */
+.ambulance-arrival-time {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#actual-arrival-time {
+    font-size: 2em;
+    color: #007bff;
+    font-weight: bold;
+}

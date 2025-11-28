@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutaxassis Tanlash va Chat</title>
+    <link rel="stylesheet" href="./css/message.css">
+</head>
+<body>
+
+    <div class="chat-container">
+        
+        <header class="chat-header">
+            <h3>Mutaxassis bilan muloqat</h3>
+            <button id="startSelectionBtn" class="selection-btn">Mutaxassis tanlash</button>
+        </header>
+
+        <div id="selectionArea" class="selection-area" style="display: none;">
+            <h4>Mutaxassis yo'nalishini tanlang:</h4>
+            <select id="specialtySelect" class="form-select">
+                <option value="" disabled selected>Yo'nalishni tanlang</option>
+                <option value="dermatolog">Dermatolog</option>
+                <option value="terapevt">Terapevt</option>
+                <option value="kardiolog">Kardiolog</option>
+            </select>
+
+            <h4>Vrachni tanlang:</h4>
+            <select id="doctorSelect" class="form-select" disabled>
+                <option value="" disabled selected>Avval yo'nalishni tanlang</option>
+            </select>
+
+            <button id="startChatBtn" class="selection-btn" disabled>Chatni boshlash</button>
+        </div>
+
+        <div class="chat-messages" id="chatMessages" style="display: none;">
+            </div>
+
+        <form class="chat-input" id="chatForm" style="display: none;">
+            <input type="text" id="messageInput" placeholder="Xabaringizni yozing..." required>
+            <button type="submit">Yuborish</button>
+        </form>
+    </div>
+
+    <script src="./js/message.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaxsiy Tibbiy Kabinet</title>
+    <link rel="stylesheet" href="./css/bemor_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-container">
+        <header class="header-bar">
+            <h1>Shaxsiy Kabinet</h1>
+            <div class="user-profile">
+                <button class="logout-btn">Chiqish</button>
+            </div>
+        </header>
+
+        <div class="content-wrapper-phr">
+
+            <aside class="sidebar-phr">
+                <div class="profile-summary">
+                    <div class="profile-avatar-container">
+                        <img src="./image/image.png" alt="Bemor Rasmi" class="profile-avatar"> 
+                    </div>
+                    
+                    <p class="profile-name" id="bemor-ism">Mirsadikov Nodirjon</p>
+                    
+                    <div class="contact-info">
+                        <p><strong>Yoshi:</strong> 39</p>
+                        <p><strong>Pasport seriyasi:</strong> AB1234567</p>
+                        <p><strong>JShIR:</strong> 98765432101234</p>
+                        <p><strong>Tel:</strong> +998(90)123-45-67</p>
+                        <p><strong>Qon Guruhim:</strong> A(II) Rh+</p>
+                        <p><strong>Allergiya:</strong> Penitsillin (Yuqori)</p>
+                        </div>
+                </div>
+
+                <nav class="phr-menu">
+                    <a href="#asosiy" class="menu-button active" data-tab="asosiy">Bosh bo'lim</a>
+                    <a href="#tashrif" class="menu-button" data-tab="tashrif">Vrach ko'riklari</a>
+                    <a href="#analiz" class="menu-button" data-tab="analiz">Analiz Natijalari</a>
+                    <a href="#recept" class="menu-button" data-tab="recept">Retseptlarim</a> 
+                    <a href="#tashxis" class="menu-button" data-tab="tashxis">Tashxislar</a>
+                    <a href="#tashxis" class="menu-button" data-tab="tashxis">Oits malumotnoma</a>
+                    <a href="#allergiyalar" class="menu-button" data-tab="allergiyalar">Allergiyalar Va Reaksiyalar</a>
+                    <a href="#hayotiy" class="menu-button" data-tab="hayotiy">Hayotiy Koʻrsatkichlar Dinamikasi</a> 
+                    <a href="#emlash" class="menu-button" data-tab="emlash">Immunizatsiya (Emlash)</a>
+                    <a href="#tasvirlar" class="menu-button" data-tab="tasvirlar">Tibbiy Tasvirlar Arxiviga Havolalar</a> 
+                    <a href="#jarrohlik" class="menu-button" data-tab="jarrohlik">Jarrohlik Amaliyotlari Tarixi</a>
+                    <a href="#stl" class="menu-button" data-tab="stl">Sogʻlom Turmush Tarzi Maʼlumotlari</a> 
+                    <a href="#anamnez" class="menu-button" data-tab="anamnez">Oilaviy Anamnez</a>
+                    <a href="#korsatmalar" class="menu-button" data-tab="korsatmalar">Shifokor ko‘rsatmalari</a>
+                    <a href="#korsatmalar" class="menu-button" data-tab="korsatmalar">Surunkali kasalliklar</a>
+                </nav>
+            </aside>
+
+            <main class="details-content-phr">
+                <div id="phr-tab-content">
+                    
+                    <div id="content-asosiy" class="phr-tab-pane active">
+                        <h2>Bosh bo'lim</h2>
+                        <div class="container">
+                            <a href="./message.html" class="button-box">Online maslahat olish</a>
+                            <a href="./Terikassaliklarinianiqlash.html" class="button-box">Teri kasalliklarini aniqlash</a>
+                            <a href="#" class="button-box">Virach bilan videoqo'ng'iroq</a>
+                            <a href="./lokation.html" class="button-box">Eng yaqin dori xonani topish</a>
+                            <a href="./dorilar.html" class="button-box">Ai yordamchidan foydalanish</a>
+                            <a href="#" class="button-box">0.86 - 0.82 malumotnoma</a>
+                            <a href="./tibbiy_yordam.html" class="button-box">Tez tibbiy yordam</a>
+                            <a href="./sugirta.html" class="button-box">Tibbiy sug'irda </a>
+                            <a href="./nogironlik.html" class="button-box">Nogironligi</a>
+                            <a href="./xronik.html" class="button-box">Xoronik kasalliklar manitoring</a>
+                        </div>
+                        
+                        <p>Bu bo'limda shaxsiy tibbiy kartangizdagi eng muhim ma'lumotlarning qisqacha xulosasi ko'rsatiladi.</p>
+                        
+                        <div class="current-status-box" style="color:var(--text-dark); border-color:#d4edda; background-color:#f8f9fa;">
+                            <p><strong>Aktiv muolajalar:</strong> Yo'q</p>
+                            <p><strong>Keyingi ko'rik:</strong> 25.12.2025 (Dr. Axmedov)</p>
+                        </div>
+                    </div>
+
+                    <div id="content-tashrif" class="phr-tab-pane hidden chat-container">
+                        <h2>Vrach Ko'riklari Tarixi va Yozilish</h2>
+                        <div class="appointment-form-container">
+                            <h3>Yangi Vrach Ko'rigiga Yozilish 📝</h3>
+                            <form id="appointment-form">
+                                <div class="form-group"><label for="location-region">Viloyat:</label><select id="location-region" required></select></div>
+                                <div class="form-group"><label for="location-city">Shahar / Tuman:</label><select id="location-city" required></select></div>
+                                <div class="form-group"><label for="clinic">Klinika / Shifoxona:</label><select id="clinic" required></select></div>
+                                <div class="form-group"><label for="speciality">Mutaxassislik:</label><select id="speciality" required></select></div>
+                                <div class="form-group"><label for="doctor">Vrach tanlash:</label><select id="doctor" required></select></div>
+                                <div class="doctor-info-box hidden" id="doctor-info-box"><p><strong>Vaqti:</strong> <span id="doctor-schedule"></span></p><p><strong>Band:</strong> <span id="booked-count"></span> kishi</p></div>
+                                <div class="form-group"><label for="appointment-date">Sana:</label><input type="date" id="appointment-date" required></div>
+                                <div class="form-group"><label for="appointment-time">Vaqtni tanlash:</label><select id="appointment-time" required></select></div>
+                                <button type="submit" class="submit-btn">Yozilishni tasdiqlash</button>
+                            </form>
+                        </div>
+                        <hr>
+                        <div class="chat-area" id="visit-history-list">
+                            </div>
+                    </div>
+                    
+                    <div id="content-analiz" class="phr-tab-pane hidden chat-container">
+                        <h2>Analiz Natijalari</h2>
+                        <div class="chat-area" id="analysis-list">
+                            </div>
+                    </div>
+                    
+                    <div id="content-recept" class="phr-tab-pane hidden">
+                        <h2>Retseptlar Ro'yxati</h2>
+                        <p>Oxirgi retseptlar va ularni qabul qilish bo'yicha ko'rsatmalar.</p>
+                        <div class="chat-area" id="receipt-list">
+                             <div class="chat-message vrach-message">
+                                <span class="chat-time">26.11.2025</span>
+                                <p class="chat-sender">Dr. Axmedov (Kardiolog)</p>
+                                <p><b>Dori:</b> Amlodipin 5mg</p>
+                                <p><b>Qabul qilish:</b> Kuniga 1 mahal, ertalab. 30 kun davomida.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content-tashxis" class="phr-tab-pane hidden">
+                        <h2>Tasdiqlangan Tashxislar</h2>
+                        <p>Tibbiy tarixdagi barcha tasdiqlangan asosiy tashxislar.</p>
+                        <ul id="diagnosis-list" style="list-style-type: none; padding: 0;">
+                            <li style="padding: 10px; margin-bottom: 5px; background-color: #ffe0e0; border-left: 4px solid #dc3545; border-radius: 4px;">Gipertoniya (II daraja) - 25.11.2025</li>
+                            <li style="padding: 10px; margin-bottom: 5px; background-color: #e9f5ff; border-left: 4px solid #007bff; border-radius: 4px;">O'RVI - 10.09.2025</li>
+                        </ul>
+                    </div>
+                    <div id="content-allergiyalar" class="phr-tab-pane hidden">
+                        <h2>Allergiyalar Va Reaksiyalar</h2>
+                        <p style="color: var(--alert-red); font-weight: 700;">Hozirda ro'yxatga olingan:</p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li>Penitsillin (Yuqori reaksiya)</li>
+                            <li>Asal (Kichik reaksiya)</li>
+                        </ul>
+                    </div>
+                    <div id="content-hayotiy" class="phr-tab-pane hidden">
+                        <h2>Hayotiy Koʻrsatkichlar Dinamikasi</h2>
+                        <p>Oxirgi o'lchovlar va ularning dinamikasi (grafiklar uchun joy).</p>
+                        <p><b>Qon Bosimi (Oxirgi):</b> 135/85 mmHg (25.11.2025)</p>
+                        <p><b>Tana Harorati (Oxirgi):</b> 36.6 °C</p>
+                        <p><b>Qon Shakar Darajasi (Oxirgi):</b> 5.2 mmol/L</p>
+                        
+
+[Image of Blood Pressure and Heart Rate chart over time]
+
+                    </div>
+                    <div id="content-emlash" class="phr-tab-pane hidden">
+                        <h2>Immunizatsiya (Emlash) Tarixi</h2>
+                        <p>Olingan emlashlar ro'yxati.</p>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background-color: #f8f9fa;">
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Vaksina</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Sana</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td style="border: 1px solid #ddd; padding: 8px;">COVID-19 (3-doza)</td><td style="border: 1px solid #ddd; padding: 8px;">15.01.2023</td></tr>
+                                <tr><td style="border: 1px solid #ddd; padding: 8px;">Grippga qarshi</td><td style="border: 1px solid #ddd; padding: 8px;">01.10.2025</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="content-tasvirlar" class="phr-tab-pane hidden">
+                        <h2>Tibbiy Tasvirlar Arxiviga Havolalar</h2>
+                        <p>Rentgen, UTT va boshqa tibbiy tasvirlarga tezkor havola.</p>
+                        <p>Tasvirlar arxivi: <a href="#" class="download-link" style="display:inline;">Arxiv.uz (login orqali)</a></p>
+                        <div class="chat-message vrach-message document-message" style="max-width: 100%;">
+                            <span class="chat-time">20.10.2025</span>
+                            <p class="chat-sender">Tibbiy Tasvir Xizmati</p>
+                            <p>O'pka Rentgenogrammasi (Normal natija)</p>
+                            <a href="#" class="download-link">Tasvirni ko'rish/yuklab olish</a>
+                        </div>
+                    </div>
+                    <div id="content-jarrohlik" class="phr-tab-pane hidden">
+                        <h2>Jarrohlik Amaliyotlari Tarixi</h2>
+                        <p>Barcha o'tkazilgan operatsiyalar va amaliyotlar.</p>
+                        <p>Hozircha ro'yxatga olingan jarrohlik amaliyotlari mavjud emas.</p>
+                    </div>
+                    <div id="content-stl" class="phr-tab-pane hidden">
+                        <h2>Sogʻlom Turmush Tarzi Maʼlumotlari</h2>
+                        <p>Tana massasi indeksi (TMI) va xavf omillari.</p>
+                        <p><b>Chekish statusi:</b> Chekmaydi</p>
+                        <p><b>Alkogol isteʼmoli:</b> Haftasiga kamdan-kam holatda</p>
+                        <p><b>Jismoniy faoliyat:</b> O'rtacha (Haftasiga 3 marta)</p>
+                    </div>
+                    <div id="content-anamnez" class="phr-tab-pane hidden">
+                        <h2>Kasalliklar Boʻyicha Oilaviy Anamnez</h2>
+                        <p>Oilada surunkali kasalliklar mavjudligi.</p>
+                        <ul style="list-style-type: square; padding-left: 20px;">
+                            <li>Ota: Gipertoniya</li>
+                            <li>Ona: Qandli diabet (II tur)</li>
+                        </ul>
+                    </div>
+                    <div id="content-korsatmalar" class="phr-tab-pane hidden">
+                        <h2>Shifokor ko‘rsatmalari</h2>
+                        <p>Doimiy qabul qilinishi kerak bo'lgan dori-darmonlar va turmush tarzi bo'yicha umumiy tavsiyalar.</p>
+                        <p><b>Tavsiya:</b> Kuniga kamida 30 daqiqa piyoda yurish. Tuz iste'molini kamaytirish.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="./js/bemor_script.js"></script>
+</body>
+</html>

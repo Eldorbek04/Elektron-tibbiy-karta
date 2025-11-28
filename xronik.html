@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xronik Kasalliklar Monitoringi (ABB)</title>
+    <link rel="stylesheet" href="./css/xronik.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Qon Bosimi Monitoringi Paneli</h1>
+    </header>
+
+    <div class="container">
+        
+        <section class="input-panel panel">
+            <h2><i class="fas fa-plus-circle"></i> Yangi Ko'rsatkich Kiritish</h2>
+            <form id="bp-form">
+                <div class="form-group">
+                    <label for="systolic">Sistolik (Yuqori) Bosim (mm Hg):</label>
+                    <input type="number" id="systolic" placeholder="120" min="50" max="250" required>
+                </div>
+                <div class="form-group">
+                    <label for="diastolic">Diastolik (Pastki) Bosim (mm Hg):</label>
+                    <input type="number" id="diastolic" placeholder="80" min="30" max="150" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Sana va Vaqt:</label>
+                    <input type="datetime-local" id="date" required>
+                </div>
+                
+                <button type="submit" class="save-btn">
+                    <i class="fas fa-save"></i> Saqlash va Tahlil Qilish
+                </button>
+            </form>
+            
+            <div id="latest-analysis" class="analysis-result hidden">
+                <h3><i class="fas fa-chart-line"></i> So'nggi Tahlil Natijasi:</h3>
+                <p id="bp-value"></p>
+                <strong id="bp-status" class="status-normal"></strong>
+                <p id="bp-advice"></p>
+            </div>
+        </section>
+
+        <section class="history-panel panel">
+            <h2><i class="fas fa-history"></i> O'lchovlar Tarixi</h2>
+            <div id="history-list" class="history-list">
+                <p class="no-data">Hozircha kiritilgan ma'lumotlar yo'q.</p>
+            </div>
+            
+            <hr>
+            
+            <h2><i class="fas fa-clipboard-list"></i> Umumiy Xulosa</h2>
+            <div class="summary-box">
+                <p>O'rtacha Sistolik:</p> <strong id="avg-systolic">--</strong>
+                <p>O'rtacha Diastolik:</p> <strong id="avg-diastolic">--</strong>
+                <p>Eng yuqori holat:</p> <strong id="max-status">--</strong>
+            </div>
+            
+        </section>
+        
+    </div>
+
+    <script src="./js/xronik.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.upload-area {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+#uploadButton {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#uploadButton:hover {
+    background-color: #218838;
+}
+
+.image-preview {
+    margin-top: 15px;
+    min-height: 150px;
+    border: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 150px;
+    display: block;
+    border-radius: 5px;
+}
+
+#analyzeButton {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+#analyzeButton:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+#analyzeButton:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.results {
+    border-top: 2px solid #007bff;
+    padding-top: 20px;
+}
+
+.results h2 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.results h3 {
+    color: #333;
+    margin-top: 15px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+}
+
+.results ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.results li {
+    margin-bottom: 8px;
+}
+
+.warning {
+    margin-top: 25px;
+    padding: 15px;
+    border: 1px solid #ffc107;
+    background-color: #fff3cd;
+    color: #856404;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* ================================================= */
+/* MEDIA QUERIES (Mobil, Planshet va Katta ekranlar) */
+/* ================================================= */
+
+/* --- 1. Mobil Qurilmalar (Maksimal kenglik 500px) --- */
+/* Faqat ekran kengligi 500px va undan kichik bo'lsa qo'llaniladi. */
+@media (max-width: 500px) {
+    
+    /* Asosiy Body */
+    body {
+        padding: 10px; /* Umumiy paddingni kamaytirish */
+        align-items: flex-start; /* Kontentni tepadan boshlash */
+    }
+
+    /* Asosiy Konteyner */
+    .container {
+        padding: 20px; /* Ichki paddingni kamaytirish */
+        border-radius: 0; /* Mobil uchun burchaklarni olib tashlash */
+        box-shadow: none; /* Soyalarni olib tashlash */
+    }
+
+    /* Sarlavha */
+    h1 {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+    }
+
+    /* Yuklash maydoni */
+    .upload-area {
+        padding: 15px;
+        margin-bottom: 15px;
+        font-size: 0.9em;
+    }
+
+    #uploadButton {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    /* Rasm oldindan ko'rish */
+    .image-preview {
+        min-height: 120px;
+    }
+    .image-preview img {
+        max-height: 120px;
+    }
+
+    /* Tahlil qilish tugmasi */
+    #analyzeButton {
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    /* Natijalar maydoni */
+    .results {
+        padding-top: 15px;
+    }
+
+    .results h2 {
+        font-size: 1.2em;
+    }
+    
+    .results h3 {
+        font-size: 1.0em;
+    }
+    
+    .results li {
+        font-size: 0.9em;
+    }
+
+    /* Ogohlantirish */
+    .warning {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
+
+
+/* --- 2. Planshetlar va Katta Telefonlar (Minimal 501px va Maksimal 800px kenglik) --- */
+/* Bu uslublar 501px dan 800px gacha bo'lgan ekranlar uchun qo'llaniladi */
+@media (min-width: 501px) and (max-width: 800px) {
+    
+    /* Asosiy Body */
+    body {
+        padding: 30px;
+    }
+
+    /* Asosiy Konteyner */
+    .container {
+        max-width: 700px; /* Planshetlarda konteynerni kengaytirish */
+        padding: 30px;
+    }
+    
+    /* Tahlil qilish tugmasi (mavjud stillar planshetlarga mos) */
+    #analyzeButton {
+        padding: 15px;
+        font-size: 18px;
+    }
+}
+
+
+/* --- 3. Katta Ekranlar (Minimal kenglik 801px) --- */
+/* Desktop monitorlari va kattaroq ekranlar uchun. */
+@media (min-width: 801px) {
+    
+    /* Asosiy Konteynerni minimal o'zgartirish */
+    .container {
+        max-width: 800px; /* Katta ekranlarda biroz kengroq bo'lishi mumkin */
+    }
+    
+    /* Rasm oldindan ko'rish maydonini kattalashtirish */
+    .image-preview {
+        min-height: 200px;
+    }
+    .image-preview img {
+        max-height: 200px;
+    }
+}
